@@ -1,3 +1,5 @@
 theme: jekyll-theme-minimal
-title: Octocat's homepage
+title: Saman Siadati
 description: Bookmark this to keep an eye on my project updates!
+logo: /assets/image/headshot_circle.png
+show_downloads: true
