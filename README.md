@@ -1,6 +1,6 @@
 # Data Scientist
 
-#### Technical Skills: Python, SQL, AWS, Azure. GCP
+#### Technical Skills: Python, SQL, AWS, Azure, GCP
 
 ## Education	        		
 - B.S., Applied Mathematics | Iran University of Science and Technology (_Sep 2003_)
