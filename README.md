@@ -6,7 +6,7 @@
 - B.S., Applied Mathematics | Iran University of Science and Technology (_Sep 2003_)
 
 ## Work Experience
-**Data Engineer @ Footbal Australia (_Dec 2023 - Present_)**
+**Data Engineer @ Football Australia (_Dec 2023 - Present_)**
 - Uncovered and corrected missing step in production data pipeline which impacted over 70% of active accounts
 - Redeveloped loan originations model which resulted in 50% improvement in model performance and saving 1 million dollars in potential losses
 
