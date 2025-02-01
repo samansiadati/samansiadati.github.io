@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Saman Siadati - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     /* Layout adjustments for fixed left sidebar */
     body {
@@ -58,11 +59,17 @@
       margin-bottom: 0.5rem;
     }
 
-    header p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto;
+    .social-icons {
+      margin-top: 1rem;
     }
+
+    .social-icons a {
+      color: white;
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
 
     nav {
       margin: 2rem 0;
@@ -154,8 +161,10 @@
       <img src="https://samansiadati.github.io/images/sam.jpg" alt="Saman Picture" class="profile-pic">
       <h1>Saman Siadati</h1>
       <br>
-      <p style="font-size: 1rem;">Welcome to my personal portfolio page</p>
-    </header>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/saman-siadati" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com/samansiadati" target="_blank"><i class="fab fa-twitter"></i></a>
+      </div>    </header>
     <nav>
       <a href="#about">About Me</a>
       <br>
@@ -198,15 +207,15 @@
     <section id="experiences">
       <h2>Experiences</h2>
       <div class="project">
-        <p class="project-title">Data Scientist/ Data Engineer</p>
-        <p>Brief description of your role and achievements at Job 2. Highlight major projects or initiatives.</p>
+        <p class="project-title">Data Scientist / Data Engineer</p>
+        <p>Created several data piplelines for data ingestion/ cleansing/ manipulation / transformation, created api-endpoints, big data analytics, Data Visualization with Tableau</p>
       </div>
       <div class="project">
         <p class="project-title">AI Trainer</p>
         <p>Brief description of your role and achievements at Job 1. Include the impact you made and key responsibilities.</p>
       </div>
       <div class="project">
-        <p class="project-title">Data Scientist</p>
+        <p class="project-title">Data Scientist / Data Engineer</p>
         <p>Brief description of your role and achievements at Job 3. Mention any leadership or innovation contributions.</p>
       </div>
     </section>
