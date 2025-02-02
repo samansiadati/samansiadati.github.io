@@ -141,6 +141,26 @@
       background: #3700b3;
     }
 
+    .research-button {
+      display: inline-block;
+      background: #001f5b;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    .research-button:hover {
+      background: #005f5f;
+    }
+
+    .research-section .project-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
     .profile-pic {
       display: block;
       max-width: 150px;
@@ -161,6 +181,16 @@
       border-radius: 20px;
       margin: 0.5rem;
     }
+
+    .certificate-section {
+      font-size: 1rem;
+    }
+
+    .certificate-section .project-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
   </style>
 </head>
 <body>
@@ -185,6 +215,8 @@
       <a href="#projects">Projects</a>
       <br>
       <a href="#research">Research & Publications</a>
+      <br>
+      <a href="#certificates">Certificates</a>
       <br>
       <a href="#contact">Contact</a>
     </nav>
@@ -294,21 +326,79 @@
       </div>
     </section>
 
-    <section id="research">
+    <section id="research" class="research-section">
       <h2>Research & Publications</h2>
+
       <div class="project">
-        <p class="project-title">Publication 1</p>
-        <p>A brief description of your research or publication. Highlight key findings or contributions.</p>
-        <a href="https://linktopublication1.com" class="button">Read More</a>
+        <p>CQL similar to SQL, not the same, Cassandra Query Language</p>
+        <p class="project-title">Level Up Coding, Mar 2021</p>
+        <a href="https://levelup.gitconnected.com/cql-is-similar-to-sql-not-the-same-8202ea582d26" class="research-button">Read More</a>
       </div>
 
       <div class="project">
-        <p class="project-title">Publication 2</p>
-        <p>A brief description of your research or publication. Highlight key findings or contributions.</p>
-        <a href="https://linktopublication2.com" class="button">Read More</a>
+        <p>The First Step in the Computational Optimization, Mathematical programming</p>
+        <p class="project-title">TowardsAI, Jan 2021</p>
+        <a href="https://pub.towardsai.net/the-first-step-in-the-optimization-f0b75b4d6a60" class="research-button">Read More</a>
       </div>
+
+      <div class="project">
+        <p>Genetic algorithm, Deep dive into natural selection method</p>
+        <p class="project-title">Artificial Intelligence in Plain English, Feb 2021</p>
+        <a href="https://ai.plainenglish.io/the-genetic-algorithm-a9acd9e157e0" class="research-button">Read More</a>
+      </div>
+
+      <div class="project">
+        <p>Linear Algebra, The hidden engine of machine learning</p>
+        <p class="project-title">Towards Data Science, Jul 2020</p>
+        <a href="https://medium.com/towards-data-science/linear-algebra-4bf8aeb3c19" class="research-button">Read More</a>
+      </div>
+
     </section>
 
+    <section id="certificates" class="certificate-section">
+      <h2>Certificates</h2>
+      <div class="project">
+        <p>Databricks Large Language Models: Foundation Models from the Ground Up</p>
+        <p class="project-title">Apr 2024, edX</p>
+      </div>
+      <div class="project">
+        <p>Databricks Large Language Models: Application through Production</p>
+        <p class="project-title">Oct 2023, edX</p>
+      </div>
+      <div class="project">
+        <p>Databricks Lakehouse Fundamentals</p>
+        <p class="project-title">Aug 2022, Databricks Academy</p>
+      </div>
+      <div class="project">
+        <p>Oracle Machine Learning using Autonomous Database Specialist</p>
+        <p class="project-title">Jan 2022, Oracle University</p>
+      </div>
+      <div class="project">
+        <p>Certified Artificial Intelligence Professional</p>
+        <p class="project-title">Oct 2021, Australian Institute of ICT</p>
+      </div>
+      <div class="project">
+        <p>Statistical Thinking and Problem Solving</p>
+        <p class="project-title">Jun 2020, SAS</p>
+      </div>
+      <div class="project">
+        <p>Google Cloud Platform Big Data and Machine Learning Fundamentals</p>
+        <p class="project-title">Apr 2020, Google</p>
+      </div>
+      <div class="project">
+        <p>Advanced Data Science Specialist</p>
+        <p class="project-title">Sep 2019, IBM</p>
+      </div>      
+      <div class="project">
+        <p>Scalable Machine Learning on Big Data using Apache Spark</p>
+        <p class="project-title">Sep 2019, IBM</p>
+      </div>
+      <div class="project">
+        <p>Deep Learning & Neural Networks with Keras</p>
+        <p class="project-title">Sep 2019, IBM</p>
+      </div>
+    </section>
+    
     <section id="contact">
       <h2>Contact</h2>
       <p>If you'd like to get in touch, feel free to reach out via email at <a href="mailto:samansiadati@gmail.com">samansiadati@gmail.com</a>.</p>
