@@ -4,201 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Saman Siadati - Portfolio</title>
-  
+
   <!-- Fonts and Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <style>
-    /* Your original style (I kept it) */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
+    /* Your original styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { display: flex; background: #f9f9f9; color: #333; line-height: 1.6; }
+    aside { position: fixed; top: 0; left: 0; width: 20%; background: #f3f3f3; height: 100vh; padding: 2rem 1rem; box-shadow: 2px 0 5px rgba(0,0,0,0.1); }
+    main { margin-left: 22%; max-width: 70%; padding: 2rem 1rem; }
+    header, #about, #skills, #experiences, #projects, #research, #certificates, #contact { margin-bottom: 2rem; }
+    header { background: #001f5b; color: white; padding: 1.5rem 1rem; text-align: center; }
+    header h1 { font-family: 'Pacifico', cursive; font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .social-icons a { color: white; margin: 0 0.5rem; font-size: 1.5rem; text-decoration: none; }
+    nav { margin: 2rem 0; text-align: center; }
+    nav a { margin: 0.5rem 0; display: block; text-decoration: none; color: #001f5b; font-weight: 600; }
+    section { margin-bottom: 3rem; }
+    h2 { color: #001f5b; margin-bottom: 1rem; }
+    .project { background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 1rem; margin-bottom: 1.5rem; }
+    .profile-pic { display: block; max-width: 150px; height: auto; border-radius: 50%; margin: 2rem auto; }
+    footer { background: #001f5b; color: white; text-align: center; padding: 1rem; margin-top: 3rem; }
 
-    body {
-      display: flex;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    aside {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 20%;
-      background-color: #f3f3f3;
-      height: 100vh;
-      padding: 2rem 1rem;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    }
-
-    main {
-      margin-left: 22%;
-      max-width: 70%;
-      padding: 2rem 1rem;
-    }
-
-    header, #about, #skills {
-      margin-bottom: 2rem;
-    }
-
-    header {
-      background: #001f5b;
-      color: white;
-      padding: 1.5rem 1rem;
-      text-align: center;
-    }
-
-    header h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .social-icons a {
-      color: white;
-      margin: 0 0.5rem;
-      font-size: 1.5rem;
-      text-decoration: none;
-    }
-
-    nav {
-      margin: 2rem 0;
-      text-align: center;
-    }
-
-    nav a {
-      margin: 0.5rem 0;
-      display: block;
-      text-decoration: none;
-      color: #001f5b;
-      font-weight: 600;
-    }
-
-    section {
-      margin-bottom: 3rem;
-    }
-
-    h2 {
-      color: #001f5b;
-      margin-bottom: 1rem;
-    }
-
-    .project {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .profile-pic {
-      display: block;
-      max-width: 150px;
-      height: auto;
-      border-radius: 50%;
-      margin: 2rem auto;
-    }
-
-    footer {
-      background: #001f5b;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
-    }
-
-    /* --------- Chatbot styles --------- */
-    .chatbot-button {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #001f5b;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 30px;
-      cursor: pointer;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-      z-index: 1000;
-    }
-
-    .chatbot-container {
-      position: fixed;
-      bottom: 100px;
-      right: 30px;
-      width: 300px;
-      max-height: 400px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      z-index: 1000;
-    }
-
-    .chatbot-header {
-      background: #001f5b;
-      color: white;
-      padding: 10px;
-      text-align: center;
-      font-weight: bold;
-    }
-
-    .chatbot-messages {
-      flex: 1;
-      padding: 10px;
-      overflow-y: auto;
-      font-size: 14px;
-    }
-
-    .chatbot-input {
-      display: flex;
-      border-top: 1px solid #ccc;
-    }
-
-    .chatbot-input input {
-      flex: 1;
-      padding: 10px;
-      border: none;
-      outline: none;
-    }
-
-    .chatbot-input button {
-      background: #001f5b;
-      color: white;
-      border: none;
-      padding: 0 15px;
-      cursor: pointer;
-    }
-
-    .chatbot-message {
-      margin-bottom: 10px;
-    }
-
-    .chatbot-message.user {
-      text-align: right;
-      color: #001f5b;
-    }
-
-    .chatbot-message.bot {
-      text-align: left;
-      color: #555;
-    }
+    /* Chatbot Styles */
+    .chatbot-button { position: fixed; bottom: 30px; right: 30px; background: #001f5b; color: white; border: none; border-radius: 50%; width: 60px; height: 60px; font-size: 30px; cursor: pointer; box-shadow: 0 5px 10px rgba(0,0,0,0.2); z-index: 1000; }
+    .chatbot-container { position: fixed; bottom: 100px; right: 30px; width: 300px; max-height: 400px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); display: none; flex-direction: column; overflow: hidden; z-index: 1000; }
+    .chatbot-header { background: #001f5b; color: white; padding: 10px; text-align: center; font-weight: bold; }
+    .chatbot-messages { flex: 1; padding: 10px; overflow-y: auto; font-size: 14px; }
+    .chatbot-input { display: flex; border-top: 1px solid #ccc; }
+    .chatbot-input input { flex: 1; padding: 10px; border: none; outline: none; }
+    .chatbot-input button { background: #001f5b; color: white; border: none; padding: 0 15px; cursor: pointer; }
+    .chatbot-message { margin-bottom: 10px; }
+    .chatbot-message.user { text-align: right; color: #001f5b; }
+    .chatbot-message.bot { text-align: left; color: #555; }
   </style>
 </head>
 
 <body>
 
-  <!-- Sidebar and Main Content (your original content) -->
+  <!-- Sidebar -->
   <aside>
     <header>
       <img src="https://samansiadati.github.io/images/sam.jpg" alt="Saman Picture" class="profile-pic">
@@ -222,20 +68,69 @@
     </nav>
   </aside>
 
+  <!-- Main Content -->
   <main>
-    <!-- YOUR MAIN PAGE CONTENT HERE -->
     <section id="about">
       <h2>About Me</h2>
-      <p>Hello! I'm Saman Siadati, a qualified data scientist. With a background in ML/AI/big data projects, I enjoy building meaningful projects and sharing knowledge through my work.</p>
+      <p>Hello! I'm Saman Siadati, a qualified data scientist with experience in ML/AI/big data projects. I enjoy building meaningful projects and sharing knowledge through my work.</p>
     </section>
 
-    <!-- (continue your sections like Skills, Experiences, Projects, Research, etc...) -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>Python, R, SQL</li>
+        <li>Machine Learning, Deep Learning, NLP</li>
+        <li>Big Data: Hadoop, Spark</li>
+        <li>Cloud: AWS, Azure</li>
+      </ul>
+    </section>
+
+    <section id="experiences">
+      <h2>Experiences</h2>
+      <p>Data Scientist at XYZ Company (2020–2024)</p>
+      <p>Research Assistant at IIT (2018–2020)</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Customer Churn Prediction</h3>
+        <p>Built a predictive model to identify churned customers with 85% accuracy.</p>
+      </div>
+      <div class="project">
+        <h3>Twitter Sentiment Analysis</h3>
+        <p>Analyzed social media sentiment trends during major events using NLP techniques.</p>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2>Research & Publications</h2>
+      <p>Published 3 papers on AI interpretability and healthcare predictive analytics.</p>
+    </section>
+
+    <section id="certificates">
+      <h2>Certificates</h2>
+      <ul>
+        <li>Google Data Analytics Professional Certificate</li>
+        <li>AWS Certified Machine Learning - Specialty</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: saman.siadati@example.com</p>
+    </section>
   </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Saman Siadati. All rights reserved.
+  </footer>
 
   <!-- Chatbot Button -->
   <button class="chatbot-button" onclick="toggleChatbot()">💬</button>
 
-  <!-- Chatbot Container -->
+  <!-- Chatbot Box -->
   <div class="chatbot-container" id="chatbot">
     <div class="chatbot-header">Chat with Me!</div>
     <div class="chatbot-messages" id="chatbot-messages">
@@ -247,7 +142,7 @@
     </div>
   </div>
 
-  <!-- JavaScript for Chatbot -->
+  <!-- Chatbot Script -->
   <script>
     function toggleChatbot() {
       const chatbot = document.getElementById('chatbot');
@@ -267,7 +162,7 @@
         setTimeout(() => {
           const botMessage = document.createElement('div');
           botMessage.className = 'chatbot-message bot';
-          botMessage.innerText = 'Thanks for your message! I\'ll get back to you shortly.';
+          botMessage.innerText = "Thanks for your message! I'll get back to you shortly.";
           messages.appendChild(botMessage);
           messages.scrollTop = messages.scrollHeight;
         }, 500);
