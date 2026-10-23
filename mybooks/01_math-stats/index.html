@@ -41,6 +41,9 @@ h1{color:var(--navy);font-size:clamp(1.5rem,5vw,2rem);line-height:1.25;margin-bo
 .meta{color:var(--muted);margin-bottom:1.25rem}
 .button{display:inline-block;background:var(--navy);color:#fff;padding:.7rem 1.3rem;border-radius:6px;font-weight:600;text-decoration:none}
 .button:hover{background:#0a3a9a}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.button.secondary{background:#fff;color:var(--navy);border:2px solid var(--navy);padding:calc(.7rem - 2px) calc(1.3rem - 2px)}
+.button.secondary:hover{background:var(--navy);color:#fff}
 h2{font-size:1.05rem;color:var(--navy);margin:1.75rem 0 .5rem}
 .cite{background:#f1f3f9;border-radius:6px;padding:.75rem 1rem;font-size:.92rem;overflow-wrap:anywhere}
 .copy{margin-top:.5rem;background:none;border:1px solid var(--navy);color:var(--navy);border-radius:6px;padding:.3rem .8rem;font:inherit;font-size:.85rem;font-weight:600;cursor:pointer}
@@ -61,7 +64,10 @@ footer{text-align:center;color:var(--muted);font-size:.9rem;padding:1.5rem 1rem}
     <h1>Mathematical and Statistical Foundations of AI</h1>
     <p class="meta">By Saman Siadati &middot; <time datetime="2021-02-23">23 February 2021</time></p>
 
-    <a class="button" href="math-stats-ai-v11.pdf">Download the book (PDF)</a>
+    <div class="actions">
+      <a class="button" href="math-stats-ai-v11.pdf">Download the book (PDF)</a>
+      <a class="button secondary" href="https://github.com/samansiadati/samansiadati.github.io/blob/main/mybooks/01_math-stats/01_math_total_new.md" target="_blank" rel="noopener">Read online (Markdown)</a>
+    </div>
 
     <h2>Cite this book</h2>
     <p class="cite" id="cite">Siadati, S. (2021). Mathematical and Statistical Foundations of AI. https://doi.org/10.5281/zenodo.15713364</p>
