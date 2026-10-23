@@ -1,461 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saman Siadati - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    /* Layout adjustments for fixed left sidebar */
-    body {
-      display: flex;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saman Siadati - Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+:root{--navy:#001f5b;--bg:#f9f9f9;--text:#333;--muted:#666;--card:#fff;--chip:#e6e9f1;--line:#d9dde8}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:1rem}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:var(--navy)}
+a:focus-visible,button:focus-visible{outline:3px solid #3b6fe0;outline-offset:2px}
 
-    aside {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 20%;
-      background-color: #f3f3f3;
-      height: 100vh;
-      padding: 2rem 1rem;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    }
+/* Layout: sidebar on desktop, top bar on phones/tablets */
+.layout{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+aside{position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--navy);color:#fff;padding:2rem 1.25rem;text-align:center}
+.profile-pic{width:140px;height:140px;object-fit:cover;border-radius:50%;border:3px solid #fff;margin:0 auto 1rem;display:block}
+aside h1{font-family:'Pacifico',cursive;font-weight:400;font-size:1.8rem;line-height:1.2}
+.tagline{font-size:.9rem;opacity:.85;margin-top:.25rem}
+.social-icons{margin:1rem 0 1.5rem}
+.social-icons a{color:#fff;margin:0 .5rem;font-size:1.4rem;text-decoration:none}
+nav{display:flex;flex-direction:column;gap:.25rem}
+nav a{color:#fff;text-decoration:none;font-weight:600;padding:.5rem .75rem;border-radius:6px}
+nav a:hover,nav a.active{background:rgba(255,255,255,.18)}
 
-    main {
-      margin-left: 22%;
-      max-width: 70%;
-      padding: 2rem 1rem;
-    }
+main{width:100%;max-width:860px;padding:2.5rem 2rem 4rem;margin:0 auto}
+section{margin-bottom:3rem}
+h2{color:var(--navy);font-size:1.6rem;margin-bottom:1rem}
 
-    header, #about, #skills {
-      margin-bottom: 2rem;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
+.card{background:var(--card);border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.08);padding:1.1rem 1.25rem;margin-bottom:1rem}
+.card h3{font-size:1.15rem;line-height:1.35}
+.meta{display:block;color:var(--muted);font-size:.9rem;margin:.15rem 0 .5rem}
+.card p{overflow-wrap:anywhere}
+.exp{border-left:4px solid var(--navy)}
 
-    body {
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.75rem}
+.skill-group{background:var(--card);border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.08);padding:.9rem 1rem}
+.skill-group h3{font-size:.95rem;margin-bottom:.5rem}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem}
+.chips li{background:var(--chip);border-radius:999px;padding:.2rem .7rem;font-size:.85rem}
 
-    header {
-      background: #001f5b;
-      color: white;
-      padding: 1.5rem 1rem;
-      text-align: center;
-    }
+.button{display:inline-block;background:var(--navy);color:#fff;padding:.5rem 1rem;border-radius:6px;text-decoration:none;font-weight:600;margin-top:.5rem}
+.button:hover{background:#0a3a9a}
 
-    header h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
+.cert h3{font-size:1rem;font-weight:600}
+footer{background:var(--navy);color:#fff;text-align:center;padding:1rem}
 
-    .social-icons {
-      margin-top: 1rem;
-    }
+#back-to-top{position:fixed;bottom:20px;right:20px;display:none;background:var(--navy);color:#fff;border:0;border-radius:50%;width:48px;height:48px;cursor:pointer;font-size:1.4rem;box-shadow:0 2px 6px rgba(0,0,0,.3)}
 
-    .social-icons a {
-      color: white;
-      margin: 0 0.5rem;
-      font-size: 1.5rem;
-      text-decoration: none;
-    }
-
-
-    nav {
-      margin: 2rem 0;
-      text-align: center;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #001f5b;
-      font-weight: 600;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    section {
-      margin-bottom: 3rem;
-    }
-
-    h2 {
-      color: #001f5b;
-      margin-bottom: 1rem;
-    }
-
-    .project {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .project-title {
-      font-weight: 600;
-      font-size: 1.5rem;
-    }
-
-    .company-name {
-      font-weight: bold;
-      color: #333;      
-      font-size: 1rem;
-      display: block;
-      margin-top: 0.3rem;
-    }
-
-    footer {
-      background: #001f5b;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
-    }
-
-    .button {
-      display: inline-block;
-      background: #001f5b;
-      color: white;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      border-radius: 4px;
-      margin-top: 1rem;
-    }
-
-    .button:hover {
-      background: #3700b3;
-    }
-
-    .research-button {
-      display: inline-block;
-      background: #001f5b;
-      color: white;
-      padding: 0.6rem 1.2rem;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      margin-top: 1rem;
-    }
-
-    .research-button:hover {
-      background: #005f5f;
-    }
-
-    .research-section .project-title {
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    .profile-pic {
-      display: block;
-      max-width: 150px;
-      height: auto;
-      border-radius: 50%;
-      margin: 2rem auto;
-    }
-
-    .skill-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .skill-list li {
-      background: #e0e0e0;
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      margin: 0.5rem;
-    }
-
-    .certificate-section {
-      font-size: 1rem;
-    }
-
-    .certificate-section .project-title {
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-  </style>
+/* Tablets and phones */
+@media (max-width:900px){
+  .layout{display:block}
+  aside{position:sticky;height:auto;overflow:visible;padding:.75rem 1rem;z-index:10;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;text-align:left}
+  .profile-pic{width:44px;height:44px;margin:0;border-width:2px}
+  .brand{display:flex;align-items:center;gap:.75rem}
+  aside h1{font-size:1.3rem}
+  .tagline{display:none}
+  .social-icons{margin:0}
+  nav{flex-direction:row;width:100%;overflow-x:auto;gap:.25rem;padding-bottom:.25rem;-webkit-overflow-scrolling:touch}
+  nav a{white-space:nowrap;padding:.4rem .7rem;font-size:.9rem}
+  main{padding:1.5rem 1rem 3rem}
+  html{scroll-padding-top:7rem}
+}
+@media (max-width:480px){
+  h2{font-size:1.35rem}
+  .card{padding:1rem}
+  .skills{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
+<div class="layout">
   <aside>
-    <header>
-      <img src="https://samansiadati.github.io/images/sam.jpg" alt="Saman Picture" class="profile-pic">
-      <h1>Saman Siadati</h1>
-      <br>
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/saman-siadati" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://twitter.com/samansiadati" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.kaggle.com/samansiadati" target="_blank"><i class="fab fa-kaggle"></i></a>
-        <a href="https://www.researchgate.net/profile/Saman-Siadati" target="_blank"><i class="fas fa-flask"></i></a>
-      </div>    </header>
+    <div class="brand">
+      <img src="https://samansiadati.github.io/images/sam.jpg" alt="Photo of Saman Siadati" class="profile-pic">
+      <div>
+        <h1>Saman Siadati</h1>
+        <p class="tagline">Data / AI Engineer</p>
+      </div>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/saman-siadati" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://twitter.com/samansiadati" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.kaggle.com/samansiadati" target="_blank" rel="noopener" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+      <a href="https://www.researchgate.net/profile/Saman-Siadati" target="_blank" rel="noopener" aria-label="ResearchGate"><i class="fas fa-flask"></i></a>
+    </div>
     <nav>
       <a href="#about">About Me</a>
-      <br>
       <a href="#skills">Skills</a>
-      <br>
       <a href="#experiences">Experiences</a>
-      <br>
       <a href="#projects">Projects</a>
-      <br>
-      <a href="#research">Research & Publications</a>
-      <br>
+      <a href="#research">Research &amp; Publications</a>
       <a href="#certificates">Certificates</a>
-      <br>
       <a href="#contact">Contact</a>
     </nav>
   </aside>
 
-
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>Hello! I'm Saman Siadati, a qualified data/AI engineer With a background in ML/AI/big data projects, I enjoy building meaningful projects and sharing knowledge through my work.</p>
+      <p>Hello! I'm Saman Siadati, a qualified data/AI engineer with a background in ML/AI/big data projects. I enjoy building meaningful projects and sharing knowledge through my work.</p>
     </section>
 
     <section id="skills">
       <h2>Skills</h2>
-      <ul class="skill-list">
-        <li>Programming Languages: Python, C++</li>
-        <li>ML/AI: Scikit-Learn, Tensorflow, PyTorch, MLOps</li>
-        <li>DataBase Management: MySQL, MS SQL server, PostGreSQL</li>
-        <li>DataBase Management(Unstructured): MongoDB</li>
-        <li>Big Data Language/Platforms: PySpark, DataBricks, TeraData</li>
-        <li>Data Analysis: Pandas, NumPy, Matplotlib, Seaborn, Plotly, Splunk</li>
-        <li>Data PipeLines: AWS Glue, AWS EventBridge, Azure Synapse</li>
-        <li>Dependency Management: Poetry</li>
-        <li>Container: Docker</li>
-        <li>BI/Visualization: Tableau, PowerBI</li>
-        <li>MicroServices: FastAPI, AWS lambda, AWS API Gateway, AWS S3 buckets </li>
-        <li>Cloud Platforms: AWS, MS Azure, GCP</li>
-        <li>Version Control: Git & GitHub, Gitlab, Bitbucket, Azure DevOps</li>
-        <li>Soft Skills: Statistical Thinking, Problem-solving, Teamwork</li>
-
-      </ul>
+      <div class="skills">
+        <div class="skill-group"><h3>Programming Languages</h3><ul class="chips"><li>Python</li><li>C++</li></ul></div>
+        <div class="skill-group"><h3>ML/AI</h3><ul class="chips"><li>Scikit-Learn</li><li>TensorFlow</li><li>PyTorch</li><li>MLOps</li></ul></div>
+        <div class="skill-group"><h3>Databases</h3><ul class="chips"><li>MySQL</li><li>MS SQL Server</li><li>PostgreSQL</li><li>MongoDB</li></ul></div>
+        <div class="skill-group"><h3>Big Data</h3><ul class="chips"><li>PySpark</li><li>Databricks</li><li>Teradata</li></ul></div>
+        <div class="skill-group"><h3>Data Analysis</h3><ul class="chips"><li>Pandas</li><li>NumPy</li><li>Matplotlib</li><li>Seaborn</li><li>Plotly</li><li>Splunk</li></ul></div>
+        <div class="skill-group"><h3>Data Pipelines</h3><ul class="chips"><li>AWS Glue</li><li>AWS EventBridge</li><li>Azure Synapse</li></ul></div>
+        <div class="skill-group"><h3>Microservices</h3><ul class="chips"><li>FastAPI</li><li>AWS Lambda</li><li>AWS API Gateway</li><li>AWS S3</li></ul></div>
+        <div class="skill-group"><h3>Cloud Platforms</h3><ul class="chips"><li>AWS</li><li>MS Azure</li><li>GCP</li></ul></div>
+        <div class="skill-group"><h3>BI / Visualization</h3><ul class="chips"><li>Tableau</li><li>Power BI</li></ul></div>
+        <div class="skill-group"><h3>Tooling</h3><ul class="chips"><li>Docker</li><li>Poetry</li><li>Git &amp; GitHub</li><li>GitLab</li><li>Bitbucket</li><li>Azure DevOps</li></ul></div>
+        <div class="skill-group"><h3>Soft Skills</h3><ul class="chips"><li>Statistical Thinking</li><li>Problem-solving</li><li>Teamwork</li></ul></div>
+      </div>
     </section>
+
     <section id="experiences">
       <h2>Experiences</h2>
-      <div class="project">
-        <p class="project-title">AI Trainer</p>
-        <span class="company-name">Outlier (May 2024 - Present) part-time</span>
-        <p>Evaluates and enhances AI-generated mathematical content for accuracy, clarity, and relevance.</p>
-      </div>
-      <div class="project">
-        <p class="project-title">LLM Engineer</p>
-        <span class="company-name">AAK TELE-SCIENCE (Jul 2021 - Present) part-time</span>
-        <p>Recommendation System to choose best investor for the best combination of research group and research subjects / Questions Answering system using Google TAPAS LLM model for table-based data </p>
-      </div>
-      <div class="project">
-        <p class="project-title">Data / AI Engineer</p>
-        <span class="company-name">Football Australia (Dec 2023 - Present)</span>
-        <p>Created several data pipelines for data ingestion, cleansing, manipulation, and transformation; created API endpoints, big data analytics, and data visualization with Tableau.</p>
-      </div>
-      <div class="project">
-        <p class="project-title">Data Scientist / Data Engineer</p>
-        <span class="company-name">7-Eleven (Jan 2023 - Dec 2023)</span>
-        <p>Created a risk management system with populate data files into tables in bronze, silver and gold layers to extract the insight</p>
-      </div>
-      <div class="project">
-        <p class="project-title">AI/ML Engineer</p>
-        <span class="company-name">DataGamz (Jun 2022 - Jan 2023)</span>
-        <p>Created a speech recognition and sentiment analysis tool with tensorflow, fastapi</p>
-      </div>
-      <div class="project">
-        <p class="project-title">Data Engineer / Data Scientist</p>
-        <span class="company-name">Accenture (March 2022 - Jun 2022)</span>
-        <p>Created a containerized environment with OpenShift and FastAPI to extract data from Splunk to push into SFTP server to be used in PowerBI to extract insights</p>
-      </div>
-      <div class="project">
-        <p class="project-title">ML Engineer</p>
-        <span class="company-name">ANZ (Oct 2021 - March 2022)</span>
-        <p>Generated the maximum insights from Bank real transaction data, such as the best merchant, the best state, best city and suburb, most valuable transactions, best weekday and best daytime, with exploratory data analysis, data cleansing, and feature engineering and geo-spatial analysis </p>
-      </div>
-      <div class="project">
-        <p class="project-title">AI/ML Engineer</p>
-        <span class="company-name">SamurAIBI (Jul 2021 - Dec 2021) part-time</span>
-        <p>Created an automation for mask detection in pictures and videos using Tensorflow and OpenCV/</p>
-      </div>
-      <div class="project">
-        <p class="project-title"></p>
-        <p class="project-title">ML Engineer</p>
-        <span class="company-name">Kadree (Jan 2021 - Jul 2022) part-time</span>
-        <p>Created predictive modeling and automated alarm mechanism for older-aged people to mitigate the risk of hospitalization and death with anomaly detection </p>
-      </div>
-      <div class="project">
-        <p class="project-title"></p>
-        <p class="project-title">Data Scientist</p>
-        <span class="company-name">isgood (March 2020 - Dec 2020) part-time</span>
-        <p>Web scrapping for Gender Equity Victoria, women’s health and the prevention of violence against women with Python Beautiful soup and scrappy</p>
-      </div>
-      <div class="project">
-        <p class="project-title"></p>
-        <p class="project-title">Data Scientist</p>
-        <span class="company-name">SirLab (Jan 2011 - Dec 2019)</span>
-        <p> Text Analysis for extracting the most valuable insights from students and staff comments from the questionnaire about using the remote technologies, with n-grams, word-cloud/ Sentiment Analysis on open-questions comments in student’s survey in Python with textBlob/ Exploratory Data Analysis (EDA) and visualisation for student’s enrolment in university departments with seaborn, matplotlib and plotly/ Big data analysis with Google BigQuery. </p>
-      </div>
+      <div class="card exp"><h3>AI Trainer</h3><span class="meta">Outlier · May 2024 - Present · part-time</span><p>Evaluates and enhances AI-generated mathematical content for accuracy, clarity, and relevance.</p></div>
+      <div class="card exp"><h3>LLM Engineer</h3><span class="meta">AAK TELE-SCIENCE · Jul 2021 - Present · part-time</span><p>Recommendation system to choose the best investor for the best combination of research group and research subjects. Question answering system using the Google TAPAS LLM for table-based data.</p></div>
+      <div class="card exp"><h3>Data / AI Engineer</h3><span class="meta">Football Australia · Dec 2023 - Present</span><p>Created several data pipelines for data ingestion, cleansing, manipulation, and transformation; created API endpoints, big data analytics, and data visualization with Tableau.</p></div>
+      <div class="card exp"><h3>Data Scientist / Data Engineer</h3><span class="meta">7-Eleven · Jan 2023 - Dec 2023</span><p>Created a risk management system that populates data files into bronze, silver and gold layer tables to extract insights.</p></div>
+      <div class="card exp"><h3>AI/ML Engineer</h3><span class="meta">DataGamz · Jun 2022 - Jan 2023</span><p>Created a speech recognition and sentiment analysis tool with TensorFlow and FastAPI.</p></div>
+      <div class="card exp"><h3>Data Engineer / Data Scientist</h3><span class="meta">Accenture · Mar 2022 - Jun 2022</span><p>Created a containerized environment with OpenShift and FastAPI to extract data from Splunk and push it to an SFTP server, for use in Power BI.</p></div>
+      <div class="card exp"><h3>ML Engineer</h3><span class="meta">ANZ · Oct 2021 - Mar 2022</span><p>Generated insights from real bank transaction data (best merchant, state, city and suburb, most valuable transactions, best weekday and daytime) with exploratory data analysis, data cleansing, feature engineering and geo-spatial analysis.</p></div>
+      <div class="card exp"><h3>AI/ML Engineer</h3><span class="meta">SamurAIBI · Jul 2021 - Dec 2021 · part-time</span><p>Created an automation for mask detection in pictures and videos using TensorFlow and OpenCV.</p></div>
+      <div class="card exp"><h3>ML Engineer</h3><span class="meta">Kadree · Jan 2021 - Jul 2022 · part-time</span><p>Created predictive modeling and an automated alarm mechanism for older people to reduce the risk of hospitalization and death, using anomaly detection.</p></div>
+      <div class="card exp"><h3>Data Scientist</h3><span class="meta">isgood · Mar 2020 - Dec 2020 · part-time</span><p>Web scraping for Gender Equity Victoria (women's health and prevention of violence against women) with Python, Beautiful Soup and Scrapy.</p></div>
+      <div class="card exp"><h3>Data Scientist</h3><span class="meta">SirLab · Jan 2011 - Dec 2019</span><p>Text analysis of student and staff questionnaire comments about remote technologies (n-grams, word clouds, sentiment analysis with TextBlob); EDA and visualisation of university department enrolments with Seaborn, Matplotlib and Plotly; big data analysis with Google BigQuery.</p></div>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
-      <div class="project">
-        <p class="project-title">Question Answering tool with LLM model</p>
-        <p>This project focuses on building an intelligent Question Answering (QA) tool that leverages Large Language Models (LLMs) and Google TAPAS, a state-of-the-art transformer model specifically designed for structured data such as tables. The tool aims to provide accurate, contextual, and insightful answers to user queries based on tabular datasets. This project combines the strengths of LLMs and TAPAS to provide robust QA capabilities tailored to structured data formats, bridging the gap between natural language queries and complex data tables.</p> 
-       <!--  <a href="https://github.com/yourusername/project1" class="button">View on GitHub</a> -->
-      </div>
-
-      <div class="project">
-        <p class="project-title">Recommendation System for investement in research projects</p>
-        <p>This project involves the development of a recommendation system designed to identify the best investors for optimal combinations of research groups and research subjects. The system leverages deep learning models built using TensorFlow to analyze and predict the most promising matches between investors and research initiatives. A PostgreSQL database serves as the backbone for efficient storage and retrieval of data related to research groups, subjects, and investor profiles. FastAPI is used to build a high-performance RESTful API, enabling seamless interaction between the recommendation engine and user-facing applications. The project aims to streamline investment decisions and foster innovation by aligning investors with research opportunities that best match their strategic interests.</p>
-        <!-- <a href="https://github.com/yourusername/project2" class="button">View on GitHub</a> -->
-      </div>
-
-      <div class="project">
-        <p class="project-title">Facial Expression Analysis tool</p>
-        <p>This project focuses on facial expression analysis using TensorFlow for deep learning and FastAPI for building a high-performance API. A convolutional neural network (CNN) model is trained on image datasets to detect and classify facial emotions such as happiness, sadness, anger, and surprise. The model processes input images and predicts emotional states with high accuracy. FastAPI is used to create a robust and scalable RESTful API, allowing users to upload facial images and receive real-time emotion predictions. The application is designed for integration into interactive systems, enhancing user experience in fields like marketing, gaming, and healthcare. The combination of TensorFlow and FastAPI ensures a powerful and efficient solution for emotion recognition tasks.</p>
-        <!-- <a href="https://github.com/yourusername/project2" class="button">View on GitHub</a> -->
-      </div>
-
-      <div class="project">
-        <p class="project-title">Mask Detection tool</p>
-        <p>This project focuses on developing an automation system for detecting face masks in images and videos using TensorFlow and OpenCV. The system leverages computer vision techniques to identify whether individuals are wearing masks correctly or not. TensorFlow was employed for building and training a deep learning model, while OpenCV was utilized for real-time image processing and video frame analysis. The solution is capable of detecting multiple faces simultaneously and classifying them based on mask presence. This automation can be integrated into surveillance systems for public safety and compliance monitoring. The project demonstrates the power of AI-driven tools in enhancing health and safety protocols.</p>
-        <!-- <a href="https://github.com/yourusername/project2" class="button">View on GitHub</a> -->
-      </div>
-
-      <div class="project">
-        <p class="project-title">Service Price Recommendation system</p>
-        <p>This project aims to develop a Best Price Recommendation System for computer services in Australia. The system uses Scrapy to efficiently scrape and aggregate pricing and service data from major market and sales companies. By continuously gathering real-time data, it captures market trends and pricing dynamics. The collected data is then processed and analyzed using TensorFlow to predict the best service price for the next day. The predictive model leverages machine learning algorithms to identify patterns and fluctuations in service costs. This solution empowers businesses and consumers to make informed decisions, optimizing their service expenses.</p>
-        <!-- <a href="https://github.com/yourusername/project2" class="button">View on GitHub</a> -->
-      </div>
-
-      <div class="project">
-        <p class="project-title">Old aged-care hospitalisation alarm system</p>
-        <p>The project involved analyzing time-series data generated by sensors installed in home appliances to detect anomalies in daily behavior patterns. By converting device signals into 24-character strings representing hourly activity, I created a standardized model to quantify and assess each day's quality. Leveraging frequency metrics and the Levenshtein distance, I established a system for identifying abnormal days without the need for manual monitoring. This solution enables proactive rather than reactive healthcare interventions, helping reduce hospitalization costs and risks. Currently, I am optimizing predictive models using Keras and TensorFlow, focusing on enhancing activation functions and dropout strategies for better anomaly detection.</p>
-        <!-- <a href="https://github.com/yourusername/project2" class="button">View on GitHub</a> -->
-      </div>
-
-      <div class="project">
-        <p class="project-title">Breast Cancer Prediction</p>
-        <p>This project focuses on predicting breast cancer by analyzing features computed from digitized images of fine needle aspirate (FNA) samples of breast masses. The study utilized the Wisconsin Diagnostic Breast Cancer (WDBC) dataset, which contains 569 samples (357 benign, 212 malignant). Each sample is characterized by 30 features computed from the cell nuclei in the images. The optimized SVM significantly improved diagnostic accuracy, reducing false negatives from 11 to 2.</p>
-        <!-- <a href="https://github.com/yourusername/project2" class="button">View on GitHub</a> -->
-      </div>
-
+      <div class="card"><h3>Question Answering tool with LLM</h3><p>An intelligent question answering tool that combines Large Language Models with Google TAPAS, a transformer model designed for tables. It gives accurate, contextual answers to natural language queries about tabular datasets, bridging the gap between questions and complex data tables.</p></div>
+      <div class="card"><h3>Recommendation system for investment in research projects</h3><p>A recommendation system that identifies the best investors for each combination of research group and research subject. Deep learning models built with TensorFlow predict the most promising matches, PostgreSQL stores group, subject and investor data, and a FastAPI REST API connects the engine to user-facing applications.</p></div>
+      <div class="card"><h3>Facial Expression Analysis tool</h3><p>A convolutional neural network built with TensorFlow that classifies facial emotions such as happiness, sadness, anger, and surprise. A FastAPI REST API lets users upload images and receive real-time predictions, for use in marketing, gaming, and healthcare.</p></div>
+      <div class="card"><h3>Mask Detection tool</h3><p>An automation system that detects face masks in images and videos using TensorFlow and OpenCV. It handles multiple faces at once and classifies them by mask presence, so it can support public safety and compliance monitoring.</p></div>
+      <div class="card"><h3>Service Price Recommendation system</h3><p>A best-price recommendation system for computer services in Australia. Scrapy gathers pricing data from major market and sales companies, and TensorFlow models predict the best service price for the next day.</p></div>
+      <div class="card"><h3>Old aged-care hospitalisation alarm system</h3><p>Analysis of time-series data from sensors in home appliances to detect anomalies in daily behavior. Device signals become 24-character strings of hourly activity, and frequency metrics plus Levenshtein distance flag abnormal days without manual monitoring, enabling proactive healthcare. Predictive models are being optimised with Keras and TensorFlow (activation functions and dropout).</p></div>
+      <div class="card"><h3>Breast Cancer Prediction</h3><p>Prediction of breast cancer from features of digitized fine needle aspirate (FNA) images, using the Wisconsin Diagnostic Breast Cancer dataset (569 samples: 357 benign, 212 malignant; 30 features each). An optimized SVM improved diagnostic accuracy, reducing false negatives from 11 to 2.</p></div>
     </section>
 
-    <section id="research" class="research-section">
-      <h2>Research & Publications</h2>
-
-      <div class="project">
-        <p>CQL similar to SQL, not the same, Cassandra Query Language</p>
-        <p class="project-title">Level Up Coding, Mar 2021</p>
-        <a href="https://levelup.gitconnected.com/cql-is-similar-to-sql-not-the-same-8202ea582d26" class="research-button" target="_blank">Read More</a>
-      </div>
-
-      <div class="project">
-        <p>The First Step in the Computational Optimization, Mathematical programming</p>
-        <p class="project-title">TowardsAI, Jan 2021</p>
-        <a href="https://pub.towardsai.net/the-first-step-in-the-optimization-f0b75b4d6a60" class="research-button" target="_blank">Read More</a>
-      </div>
-
-      <div class="project">
-        <p>Genetic algorithm, Deep dive into natural selection method</p>
-        <p class="project-title">Artificial Intelligence in Plain English, Feb 2021</p>
-        <a href="https://ai.plainenglish.io/the-genetic-algorithm-a9acd9e157e0" class="research-button" target="_blank">Read More</a>
-      </div>
-
-      <div class="project">
-        <p>Linear Algebra, The hidden engine of machine learning</p>
-        <p class="project-title">Towards Data Science, Jul 2020</p>
-        <a href="https://medium.com/towards-data-science/linear-algebra-4bf8aeb3c19" class="research-button" target="_blank">Read More</a>
-      </div>
-
+    <section id="research">
+      <h2>Research &amp; Publications</h2>
+      <div class="card"><h3>CQL is similar to SQL, not the same: Cassandra Query Language</h3><span class="meta">Level Up Coding · Mar 2021</span><a class="button" href="https://levelup.gitconnected.com/cql-is-similar-to-sql-not-the-same-8202ea582d26" target="_blank" rel="noopener">Read more</a></div>
+      <div class="card"><h3>The first step in computational optimization: mathematical programming</h3><span class="meta">Towards AI · Jan 2021</span><a class="button" href="https://pub.towardsai.net/the-first-step-in-the-optimization-f0b75b4d6a60" target="_blank" rel="noopener">Read more</a></div>
+      <div class="card"><h3>Genetic algorithm: a deep dive into the natural selection method</h3><span class="meta">Artificial Intelligence in Plain English · Feb 2021</span><a class="button" href="https://ai.plainenglish.io/the-genetic-algorithm-a9acd9e157e0" target="_blank" rel="noopener">Read more</a></div>
+      <div class="card"><h3>Linear algebra: the hidden engine of machine learning</h3><span class="meta">Towards Data Science · Jul 2020</span><a class="button" href="https://medium.com/towards-data-science/linear-algebra-4bf8aeb3c19" target="_blank" rel="noopener">Read more</a></div>
     </section>
 
-    <section id="certificates" class="certificate-section">
+    <section id="certificates">
       <h2>Certificates</h2>
-      <div class="project">
-        <p>Databricks Large Language Models: Foundation Models from the Ground Up</p>
-        <p class="project-title">Apr 2024, edX</p>
-      </div>
-      <div class="project">
-        <p>Databricks Large Language Models: Application through Production</p>
-        <p class="project-title">Oct 2023, edX</p>
-      </div>
-      <div class="project">
-        <p>Databricks Lakehouse Fundamentals</p>
-        <p class="project-title">Aug 2022, Databricks Academy</p>
-      </div>
-      <div class="project">
-        <p>Oracle Machine Learning using Autonomous Database Specialist</p>
-        <p class="project-title">Jan 2022, Oracle University</p>
-      </div>
-      <div class="project">
-        <p>Certified Artificial Intelligence Professional</p>
-        <p class="project-title">Oct 2021, Australian Institute of ICT</p>
-      </div>
-      <div class="project">
-        <p>Statistical Thinking and Problem Solving</p>
-        <p class="project-title">Jun 2020, SAS</p>
-      </div>
-      <div class="project">
-        <p>Google Cloud Platform Big Data and Machine Learning Fundamentals</p>
-        <p class="project-title">Apr 2020, Google</p>
-      </div>
-      <div class="project">
-        <p>Advanced Data Science Specialist</p>
-        <p class="project-title">Sep 2019, IBM</p>
-      </div>      
-      <div class="project">
-        <p>Scalable Machine Learning on Big Data using Apache Spark</p>
-        <p class="project-title">Sep 2019, IBM</p>
-      </div>
-      <div class="project">
-        <p>Deep Learning & Neural Networks with Keras</p>
-        <p class="project-title">Sep 2019, IBM</p>
-      </div>
+      <div class="card cert"><h3>Databricks Large Language Models: Foundation Models from the Ground Up</h3><span class="meta">edX · Apr 2024</span></div>
+      <div class="card cert"><h3>Databricks Large Language Models: Application through Production</h3><span class="meta">edX · Oct 2023</span></div>
+      <div class="card cert"><h3>Databricks Lakehouse Fundamentals</h3><span class="meta">Databricks Academy · Aug 2022</span></div>
+      <div class="card cert"><h3>Oracle Machine Learning using Autonomous Database Specialist</h3><span class="meta">Oracle University · Jan 2022</span></div>
+      <div class="card cert"><h3>Certified Artificial Intelligence Professional</h3><span class="meta">Australian Institute of ICT · Oct 2021</span></div>
+      <div class="card cert"><h3>Statistical Thinking and Problem Solving</h3><span class="meta">SAS · Jun 2020</span></div>
+      <div class="card cert"><h3>Google Cloud Platform Big Data and Machine Learning Fundamentals</h3><span class="meta">Google · Apr 2020</span></div>
+      <div class="card cert"><h3>Advanced Data Science Specialist</h3><span class="meta">IBM · Sep 2019</span></div>
+      <div class="card cert"><h3>Scalable Machine Learning on Big Data using Apache Spark</h3><span class="meta">IBM · Sep 2019</span></div>
+      <div class="card cert"><h3>Deep Learning &amp; Neural Networks with Keras</h3><span class="meta">IBM · Sep 2019</span></div>
     </section>
-    
+
     <section id="contact">
       <h2>Contact</h2>
-      <p>If you'd like to get in touch, feel free to reach out via email at <a href="mailto:samansiadati@gmail.com">samansiadati@gmail.com</a>.</p>
+      <p>To get in touch, email <a href="mailto:samansiadati@gmail.com">samansiadati@gmail.com</a>.</p>
     </section>
   </main>
+</div>
 
-  <footer style="position: fixed; bottom: 0; left: 0; width: 100%; background: #001f5b; color: white; text-align: center; padding: 1rem;">
-    <p>&copy; 2026 Saman Siadati. All Rights Reserved.</p>
-  </footer>
-  <button id="back-to-top" style="position: fixed; bottom: 20px; right: 20px; display: none; background-color: #001f5b; color: white; border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; font-size: 1.5rem;">&#8679;</button>
-  <script>
-    // Show the button when scrolling down
-    const backToTopButton = document.getElementById('back-to-top');
+<footer><p>&copy; 2026 Saman Siadati. All rights reserved.</p></footer>
+<button id="back-to-top" aria-label="Back to top">&#8679;</button>
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        backToTopButton.style.display = 'block';
-      } else {
-        backToTopButton.style.display = 'none';
-      }
-    });
-
-    // Scroll back to top when button is clicked
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
+<script>
+const topBtn=document.getElementById('back-to-top');
+addEventListener('scroll',()=>{topBtn.style.display=scrollY>300?'block':'none'});
+topBtn.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+// Highlight the nav link of the section in view
+const links=[...document.querySelectorAll('nav a')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id))}
+}),{rootMargin:'-30% 0px -60% 0px'});
+document.querySelectorAll('main section').forEach(s=>io.observe(s));
+</script>
 </body>
 </html>
