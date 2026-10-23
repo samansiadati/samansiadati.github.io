@@ -1,25 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Saman Siadati — My Books</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saman Siadati - My Books</title>
+<meta name="description" content="Free books on AI, machine learning, data science, LLMs and SQL by Saman Siadati.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#001f5b;--bg:#f9f9f9;--text:#333;--muted:#666;--card:#fff;--line:#d9dde8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a:focus-visible,input:focus-visible{outline:3px solid #3b6fe0;outline-offset:2px}
+header{background:var(--navy);color:#fff;text-align:center;padding:2.5rem 1rem 2rem}
+header .site{font-family:'Pacifico',cursive;font-size:1.4rem;color:#fff;text-decoration:none}
+header h1{font-size:clamp(1.8rem,5vw,2.6rem);margin:.5rem 0 .25rem}
+header p{opacity:.85}
+main{max-width:1000px;margin:0 auto;padding:1.5rem 1rem 3rem}
+.search{display:block;width:100%;max-width:420px;margin:0 auto 1.5rem;padding:.65rem 1rem;border:1px solid var(--line);border-radius:999px;font:inherit}
+.grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+.grid a{display:flex;gap:1rem;align-items:center;height:100%;background:var(--card);border-radius:8px;border-left:4px solid var(--navy);box-shadow:0 2px 4px rgba(0,0,0,.08);padding:1rem 1.1rem;text-decoration:none;color:var(--text);transition:box-shadow .15s,transform .15s}
+.grid a:hover{box-shadow:0 4px 10px rgba(0,31,91,.2);transform:translateY(-2px)}
+.num{flex:none;width:2.4rem;height:2.4rem;border-radius:50%;background:#e6e9f1;color:var(--navy);font-weight:700;display:grid;place-items:center}
+.title{font-weight:600;line-height:1.35}
+.empty{display:none;text-align:center;color:var(--muted);margin-top:1rem}
+footer{background:var(--navy);color:#fff;text-align:center;padding:1rem;font-size:.9rem}
+footer a{color:#fff}
+@media (prefers-reduced-motion:reduce){.grid a{transition:none}.grid a:hover{transform:none}}
+</style>
 </head>
 <body>
+<header>
+  <a class="site" href="https://samansiadati.github.io/">Saman Siadati</a>
   <h1>My Books</h1>
-  <ul>
-    <li><a href="https://samansiadati.github.io/mybooks/01_math-stats/index.html">📘 Mathematical and Statistical Foundations of AI</a></li>
-    <li><a href="https://samansiadati.github.io/mybooks/02_programming/index.html">📗 Programming and Algorithms for AI</a></li>
-    <li><a href="https://samansiadati.github.io/mybooks/03_optimization/index.html">📘 Optimization Techniques and Evolutionary Algorithms</a></li>
-    <li><a href="https://samansiadati.github.io/mybooks/04_datascience/index.html">📙 Data Science Foundations</a></li>
-    <li><a href="https://samansiadati.github.io/mybooks/05_machinelearning/index.html">📙 Machine Learning: Theory and Practice</a></li>
-    <li><a href="https://samansiadati.github.io/mybooks/06_deeplearning/index.html">📘 Deep Learning and Neural Networks</a></li>
-    <li><a href="https://samansiadati.github.io/mybooks/07_bigdata/index.html">📓 Big Data Analytics and Cloud Computing</a></li>
-    <li><a href="https://samansiadati.github.io/mybooks/08_nlp/index.html">📒 Natural Language Processing: Classical to Modern</a></li>
-    <li><a href="https://samansiadati.github.io/mybooks/09_llm/index.html">📒 Transformers and Large Language Models</a></li>
-    <li><a href="https://samansiadati.github.io/mybooks/10_aiops/index.html">📔 Artificial Intelligence: Concepts to Applications</a></li>
-    <li><a href="https://samansiadati.github.io/mybooks/11_transformers_200Qs/index.html">📗 200 Questions About Transfer Learning and Transformers</a></li>
-    <li><a href="https://samansiadati.github.io/mybooks/12_llm_100Qs/index.html">📘 100 Questions About Large Language Models</a></li>
-    <li><a href="https://samansiadati.github.io/mybooks/13_sql_dbs/index.html"> 📙 Databases and SQL: From 0 to 100</a></li>
-  </ul>
+  <p>13 books on AI, data and machine learning</p>
+</header>
+
+<main>
+  <input class="search" id="q" type="search" placeholder="Search books" aria-label="Search books">
+  <ol class="grid" id="list">
+    <li><a href="https://samansiadati.github.io/mybooks/01_math-stats/index.html"><span class="num">1</span><span class="title">Mathematical and Statistical Foundations of AI</span></a></li>
+    <li><a href="https://samansiadati.github.io/mybooks/02_programming/index.html"><span class="num">2</span><span class="title">Programming and Algorithms for AI</span></a></li>
+    <li><a href="https://samansiadati.github.io/mybooks/03_optimization/index.html"><span class="num">3</span><span class="title">Optimization Techniques and Evolutionary Algorithms</span></a></li>
+    <li><a href="https://samansiadati.github.io/mybooks/04_datascience/index.html"><span class="num">4</span><span class="title">Data Science Foundations</span></a></li>
+    <li><a href="https://samansiadati.github.io/mybooks/05_machinelearning/index.html"><span class="num">5</span><span class="title">Machine Learning: Theory and Practice</span></a></li>
+    <li><a href="https://samansiadati.github.io/mybooks/06_deeplearning/index.html"><span class="num">6</span><span class="title">Deep Learning and Neural Networks</span></a></li>
+    <li><a href="https://samansiadati.github.io/mybooks/07_bigdata/index.html"><span class="num">7</span><span class="title">Big Data Analytics and Cloud Computing</span></a></li>
+    <li><a href="https://samansiadati.github.io/mybooks/08_nlp/index.html"><span class="num">8</span><span class="title">Natural Language Processing: Classical to Modern</span></a></li>
+    <li><a href="https://samansiadati.github.io/mybooks/09_llm/index.html"><span class="num">9</span><span class="title">Transformers and Large Language Models</span></a></li>
+    <li><a href="https://samansiadati.github.io/mybooks/10_aiops/index.html"><span class="num">10</span><span class="title">Artificial Intelligence: Concepts to Applications</span></a></li>
+    <li><a href="https://samansiadati.github.io/mybooks/11_transformers_200Qs/index.html"><span class="num">11</span><span class="title">200 Questions About Transfer Learning and Transformers</span></a></li>
+    <li><a href="https://samansiadati.github.io/mybooks/12_llm_100Qs/index.html"><span class="num">12</span><span class="title">100 Questions About Large Language Models</span></a></li>
+    <li><a href="https://samansiadati.github.io/mybooks/13_sql_dbs/index.html"><span class="num">13</span><span class="title">Databases and SQL: From 0 to 100</span></a></li>
+  </ol>
+  <p class="empty" id="empty">No books match your search.</p>
+</main>
+
+<footer>
+  <p>&copy; 2026 Saman Siadati · <a href="https://samansiadati.github.io/">Back to portfolio</a></p>
+</footer>
+
+<script>
+const q=document.getElementById('q'),items=[...document.querySelectorAll('#list li')],empty=document.getElementById('empty');
+q.addEventListener('input',()=>{
+  const t=q.value.trim().toLowerCase();let n=0;
+  items.forEach(li=>{const show=li.textContent.toLowerCase().includes(t);li.hidden=!show;if(show)n++});
+  empty.style.display=n?'none':'block';
+});
+</script>
 </body>
 </html>
