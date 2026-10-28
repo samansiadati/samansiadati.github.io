@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Databases and SQL: From 0 to 100 - Saman Siadati</title>
+<meta name="description" content="Databases and SQL: From 0 to 100, a free book by Saman Siadati. Download the PDF.">
+
+<!-- Google Scholar citation metadata -->
+<meta name="citation_title" content="Databases and SQL: From 0 to 100">
+<meta name="citation_author" content="Saman Siadati">
+<meta name="citation_publication_date" content="2021-06-21">
+<meta name="citation_publisher" content="Saman Siadati">
+<meta name="citation_language" content="en">
+<meta name="citation_pdf_url" content="https://samansiadati.github.io/mybooks/13_sql_dbs/dbs_sql_v1.pdf">
+<meta name="citation_doi" content="10.5281/zenodo.19880169">
+
+<!-- Dublin Core for general indexing -->
+<meta name="DC.Title" content="Databases and SQL: From 0 to 100">
+<meta name="DC.Creator" content="Saman Siadati">
+<meta name="DC.Date" content="2021-06-21">
+<meta name="DC.Publisher" content="Saman Siadati">
+<meta name="DC.Language" content="en">
+<meta name="DC.Type" content="Text">
+<meta name="DC.Identifier" content="10.5281/zenodo.19880169">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#001f5b;--bg:#f9f9f9;--text:#333;--muted:#666;--line:#d9dde8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--navy)}
+a:focus-visible,button:focus-visible{outline:3px solid #3b6fe0;outline-offset:2px}
+header{background:var(--navy);padding:1rem;text-align:center}
+header a{font-family:'Pacifico',cursive;font-size:1.3rem;color:#fff;text-decoration:none}
+main{max-width:720px;margin:0 auto;padding:2rem 1rem 3rem}
+.back{display:inline-block;margin-bottom:1.25rem;font-weight:600;text-decoration:none}
+.back:hover{text-decoration:underline}
+.card{background:#fff;border-radius:8px;border-left:4px solid var(--navy);box-shadow:0 2px 4px rgba(0,0,0,.08);padding:1.5rem}
+h1{color:var(--navy);font-size:clamp(1.5rem,5vw,2rem);line-height:1.25;margin-bottom:.5rem}
+.meta{color:var(--muted);margin-bottom:1.25rem}
+.button{display:inline-block;background:var(--navy);color:#fff;padding:.7rem 1.3rem;border-radius:6px;font-weight:600;text-decoration:none}
+.button:hover{background:#0a3a9a}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+h2{font-size:1.05rem;color:var(--navy);margin:1.75rem 0 .5rem}
+.cite{background:#f1f3f9;border-radius:6px;padding:.75rem 1rem;font-size:.92rem;overflow-wrap:anywhere}
+.copy{margin-top:.5rem;background:none;border:1px solid var(--navy);color:var(--navy);border-radius:6px;padding:.3rem .8rem;font:inherit;font-size:.85rem;font-weight:600;cursor:pointer}
+.copy:hover{background:var(--navy);color:#fff}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:.25rem 1rem}
+dt{font-weight:600}
+dd{overflow-wrap:anywhere}
+footer{text-align:center;color:var(--muted);font-size:.9rem;padding:1.5rem 1rem}
+@media (max-width:480px){dl{grid-template-columns:1fr}dd{margin-bottom:.5rem}.button{display:block;text-align:center}}
+</style>
+</head>
+<body>
+<header><a href="https://samansiadati.github.io/">Saman Siadati</a></header>
+
+<main>
+  <a class="back" href="../index.html">&larr; Back to book list</a>
+  <article class="card">
+    <h1>Databases and SQL: From 0 to 100</h1>
+    <p class="meta">By Saman Siadati &middot; <time datetime="2021-06-21">21 June 2021</time></p>
+
+    <div class="actions">
+      <a class="button" href="dbs_sql_v1.pdf">Download the book (PDF)</a>
+    </div>
+
+    <h2>Cite this book</h2>
+    <p class="cite" id="cite">Siadati, S. (2021). Databases and SQL: From 0 to 100. https://doi.org/10.5281/zenodo.19880169</p>
+    <button class="copy" id="copy" type="button">Copy citation</button>
+
+    <h2>Details</h2>
+    <dl>
+      <dt>Author</dt><dd>Saman Siadati</dd>
+      <dt>Published</dt><dd>2021-06-21</dd>
+      <dt>Language</dt><dd>English</dd>
+      <dt>DOI</dt><dd><a href="https://doi.org/10.5281/zenodo.19880169">10.5281/zenodo.19880169</a></dd>
+    </dl>
+  </article>
+</main>
+
+<footer>&copy; 2026 Saman Siadati</footer>
+
+<script>
+document.getElementById('copy').addEventListener('click',async e=>{
+  try{await navigator.clipboard.writeText(document.getElementById('cite').textContent);e.target.textContent='Copied'}
+  catch(_){e.target.textContent='Press Ctrl+C to copy'}
+  setTimeout(()=>e.target.textContent='Copy citation',2000);
+});
+</script>
+</body>
+</html>
